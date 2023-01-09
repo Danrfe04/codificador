@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>
+            <img src="./imgs/Logo.png" alt="logo alura">
+        </h1>
+        <div id="container">
+        <section id="captura">
+            <textarea id="texto" placeholder="Ingrese el texto aquí"></textarea>
+            <div id="botones">
+                <button id="encButton">Encriptar</button>
+                <button id="desButton">Descencriptar</buttonid>
+            </div>
+        </section>
+        <aside>
+                <img src="./imgs/Muñeco.png" alt="">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que deseas encriptar o descencriptar</p>
+                <p id="codigo"></p>
+                <button id="copy">Copiar</button>
+        </aside>
+        </div>
+    </main>
+    <script>
+        function cifrar(){
+            var texto = document.getElementById("texto").value;
+            var cifrado = texto.replaceAll("i","imes").replaceAll("a","ai").replaceAll("e","enter").replaceAll("o","ober").replaceAll("u","ufat");
+            document.getElementById("codigo").innerHTML = cifrado;
+        }
+
+        var butEncript = document.getElementById("encButton");
+        butEncript.onclick = cifrar;
+
+        function descifrar(){
+            var codigo = document.getElementById("texto").value;
+            var descifrado = codigo.replaceAll("ai","a").replaceAll("enter","e").replaceAll("ober","o").replaceAll("ufat","u").replaceAll("imes","i");
+            document.getElementById("codigo").innerHTML= descifrado;
+        }
+        
+        var butDesencript = document.getElementById("desButton");
+        butDesencript.onclick = descifrar;
+
+        function copiar(){
+            var copyText = document.getElementById("codigo");
+            navigator.clipboard.writeText(copyText.innerHTML);
+        }
+
+        var butCoppy = document.getElementById("copy");
+        butCoppy.onclick = copiar;         
+    </script>
+</body>
+</html>

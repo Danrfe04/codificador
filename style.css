@@ -1,0 +1,38 @@
+
+body{
+    background-color: #f3f5fc;
+}
+#container{
+    display: flex;
+    justify-content: space-around;
+}
+#captura{
+    display: flex;
+    flex-direction: column;
+}
+#botones{
+    display: flex;
+    flex-direction: row;
+}
+textarea{
+    font-family: 'Roboto Slab', serif;
+    color: #0A3871;
+    border: none;
+    background-color: #f3f5fc;
+    outline: none;
+    resize: none;
+}
+::placeholder{
+    color: #0A3871;
+}
+#encButton{
+    background-color: #0A3871;
+    color: #ffffff;
+    border-radius: 24px;
+}
+#desButton{
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+}
